@@ -1,33 +1,43 @@
 *Basic Rules*
 
 Never more than 3 items.
-
 One item is always a drink.
-
 Never more than one MonsterFood.
-
 If there is a MonsterFood it always is the first item written.
-
 Any number of PlantFoods.
 
 Each MonsterFood is made up of [(monster) (foodtype)] in that order.
-
 Each PlantFoods is made up of [(plantspecifier) (planttype)] or [(planttype) (monster)].
-
 Each drink is made up of [(drinkspecifier) (drinktype)].
 
 If total form generated is longer than 140 characters, regenerate an a part until it is 140 characters or less. So regenerate greeting first, if still over 140 characters, regenerate fooditem1, if still over, regenerate fooditem2, if still over regenerate drink, if still over regenerate greeting again.
 
 When someone tweets at HungryHungryAdventurer, bot scans tweet for "breakfast", "dinner", or "traveling".
-
 Uses whichever is found first, if "breakfast" use breakfast lists instead of other lists.
 
+*List of Lists*
 Monsterfood Lists: monster, breakfastfoodtype, dinnerfoodtype, travellingfoodtype
-
 PlantFoods Lists: breakfastplantspecifier, dinnerplantspecifier, travelingplantspecifier, planttype, monster (same list as monsterfood)
-
 Drink Lists: drinkspecifier, breakfastdrinktype, dinnerdrinktype, travellingdrinktype
+Other Lists: greeting, junk, excuses
 
-Other Lists: greeting
+*Tweet Forms*
+When the bot responds after scanning and finding "dinner" or "breakfast" the form of the response 73% of the time is one of the following:
+"(greeting), (fooditem1) and (fooditem2) with (drinkitem)"
+"(greeting), (fooditem1) garnished with (fooditem2), and a (drinkitem)"
 
-When the bot responds the form of the response is: "(greeting), (fooditem1) and (fooditem2) with (drinkitem)"
+Rare Options for "breakfast" and "dinner", 6% chance of grabbing from this response list:
+"(greeting), (fooditem1) blended into (fooditem2) with a (drinkitem) base"
+"(greeting), (fooditem1) with troll bacon, and a (drinkitem) garnished with troll bacon"
+
+UltraRare Options for "breakfast" and "dinner", 1% chance of grabbing this item:
+"Sorry (Username), we are closed (excuses)"
+
+When the bot scans "travelling" it only uses the following forms:
+99% of the time:
+"You have (foodamount) (fooditem1), and (drinkamount) (drinkitem)"
+"Only (drinkamount) (drinkitem)"
+"Only (foodamount) (fooditem1)"
+
+UltraRare Options for "travelling", 1% of the time:
+"Sorry (Username), you most likely will starve today, maybe eat some (junk)"
