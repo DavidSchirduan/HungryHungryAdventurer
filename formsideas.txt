@@ -19,7 +19,7 @@ Uses whichever is found first, if "breakfast" use breakfast lists instead of oth
 Monsterfood Lists: monster, breakfastfoodtype, dinnerfoodtype, travellingfoodtype
 PlantFoods Lists: breakfastplantspecifier, dinnerplantspecifier, travelingplantspecifier, planttype, monster (same list as monsterfood)
 Drink Lists: drinkspecifier, breakfastdrinktype, dinnerdrinktype, travellingdrinktype
-Other Lists: greeting, junk, excuses
+Other Lists: greeting, junk, excuses, drinkamount, foodamount, 
 
 *Tweet Forms*
 When the bot responds after scanning and finding "dinner" or "breakfast" the form of the response 73% of the time is one of the following:
