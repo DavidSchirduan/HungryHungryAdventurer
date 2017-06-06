@@ -55,45 +55,46 @@ def CreateMeal(meal):
     else:
         foodItem1 = plantFood(meal)
         
-    if(ran(2) == 1):
-        foodItem2 = monsterFood(meal)
-    else:
-        foodItem2 = plantFood(meal)
+    foodItem2 = plantFood(meal)
 
     drinkItem = drink(meal)
 
-    greeting1 = greeting();
+    greeting1 = pickFromList("greeting");
 
-    Tmsg3 = greeting1 + " " + foodItem1 + " and " + foodItem2 + " with a " + drinkItem
-    Tmsg2 = greeting1 + " " + foodItem1 + " with a " + drinkItem
-    Tmsg1 = greeting1 + " a " + drinkItem
+    fullMsg = greeting1 + " " + foodItem1 + " and " + foodItem2 + " with a " + drinkItem
+    halfMsg = greeting1 + " " + foodItem1 + " with a " + drinkItem
+    shortMsg = greeting1 + " a " + drinkItem
 
-    if (tweetSafe(Tmsg)):
-        return Tmsg3
-    elif (tweetSafe(Tmsg)):
-        return Tmsg2
+    #make sure it's not too long for twitter
+    if (len(fullMsg) < 140):
+        return fullMsg
+    elif (len(halfMsg) < 140):
+        return halfMsg
     else:
-        return Tmsg1
+        return shortMsg
     
-
 def monsterFood(whichMeal):
+    m = pickFromList("monster");
+    f = pickFromList(whichMeal + "foodtype");
+    return m + " " + f
     
-
 def plantFood(whichMeal):
-    
+    pt = pickFromList("planttype");
+    ps = pickFromList(whichMeal + "plantspecifier");
+    m = pickFromList("monster");
+
+    if(ran(2) == 1):
+        return ps + " " + pt
+    else:
+        return pt + m    
 
 def drink(whichMeal):
+    ds = pickFromList("drinkspecifier");
+    dt = pickFromList(whichMeal + "drinktype")
     
-
-def greeting():
-    
-
-#if over 140 chars, remove second food item. If still, remove both food items
-def tweetSafe(msg):
-    return(len(msg) <= 140)
+    return ds + " " + dt
         
 
 print(CreateMeal("bfast"))
-
-
-
+print(CreateMeal("dinner"))
+print(CreateMeal("travelling"))
