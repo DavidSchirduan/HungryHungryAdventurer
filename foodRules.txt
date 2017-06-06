@@ -41,3 +41,33 @@ When the bot scans "travelling" it only uses the following forms:
 
 UltraRare Options for "travelling", 1% of the time:
 "Sorry (Username), you most likely will starve today, maybe eat some (junk)"
+
+==============================
+David's programmatic rules:
+ 
+*fooditem1*:
+50% - [(monster) (foodtype)]
+25% - [(plantspecifier) (planttype)]
+25% - [(planttype) (monster)]
+
+*fooditem2*:
+50% - [(plantspecifier) (planttype)]
+50% - [(planttype) (monster)]
+
+*drinkitem*:
+100% - [(drinkspecifier) (drinktype)]
+
+### Breakfast / Dinner Output (This isn't 100%)
+36% - "(greeting), (fooditem1) and (fooditem2) with (drinkitem)"
+37% - "(greeting), (fooditem1) garnished with (fooditem2), and a (drinkitem)"
+03% - "(greeting), (fooditem1) blended into (fooditem2) with a (drinkitem) base"
+03% - "(greeting), (fooditem1) with troll bacon, and a (drinkitem) garnished with troll bacon"
+01% - "Sorry (Username), we are closed (excuses)"
+
+### Travelling Output
+33% - "You have (foodamount) (fooditem1), and (drinkamount) (drinkitem)"
+33% - "Only (drinkamount) (drinkitem)"
+33% - "Only (foodamount) (fooditem1)"
+01% - "Sorry (Username), you most likely will starve today, maybe eat some (junk)"
+
+If tweet too long, regenerate meal until it's short enough.
